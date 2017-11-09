@@ -1,0 +1,36 @@
+.line-select-div{
+    margin-top: 1rem;
+    margin-left: 1rem;
+    position:absolute;
+}
+
+.button-group{
+    margin-top: 1rem;
+}
+
+.points_div {
+    margin-top: 15.3rem;
+    margin-left: 2rem;
+    position: absolute;
+    background: #add2ff;
+    border-radius: 1rem;
+}
+
+.tips{
+    margin-left: 2rem;
+    margin-top: 2rem;
+    width: 20rem;
+}
+
+.ponts_div_inner{
+    padding: 2rem 2rem 2rem 2rem;
+}
+
+.nodisplay{
+    display: none;
+}
+
+.claerbutton{
+    margin-top: 10rem;
+    margin-left: 2rem;
+}

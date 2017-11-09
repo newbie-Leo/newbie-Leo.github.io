@@ -1,0 +1,152 @@
+<!-- 重点参数：renderOptions -->
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 原始地址：//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/index.html -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>惠生园出行指南</title>
+    <style>
+    html,
+    body,
+    #container {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+    }
+    
+    #loadingTip {
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        padding: 3px 10px;
+        background: red;
+        color: #fff;
+        font-size: 14px;
+    }
+    </style>
+    <link rel="apple-touch-icon-precomposed" href="http://s.amazeui.org/assets/2.x/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="http://s.amazeui.org/assets/2.x/css/amazeui.min.css?v=ivnep6b6">
+    <link rel="stylesheet" href="http://s.amazeui.org/assets/2.x/css/amaze.min.css?v=ivnep6b6">
+    <link rel="canonical" href="http://amazeui.org/widgets/menu/dropdown1/0?_ver=2.x"/>
+    <link rel="stylesheet" href="css/life.css"/>
+    <script src="http://s.amazeui.org/assets/2.x/js/jquery.min.js?v=ivnep6b6">
+    </script>
+    <script src="http://s.amazeui.org/assets/2.x/js/handlebars.min.js?v=ivnep6b6"></script>
+    <script src="http://s.amazeui.org/assets/2.x/js/amazeui.min.js?v=ivnep6b6"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <header data-am-widget="header"
+          class="am-header am-header-default">
+      <div class="am-header-left am-header-nav">
+          <a href="#left-link" class="">
+                <i class="am-header-icon am-icon-home"></i>
+          </a>
+      </div>
+
+      <h1 class="am-header-title">
+          <a href="#title-link" class="">
+            惠生园出行指南
+          </a>
+      </h1>
+    </header>
+    <nav data-am-widget="menu" class="am-menu  am-menu-dropdown1"  
+       data-am-menu-collapse> 
+      <a href="javascript: void(0)" class="am-menu-toggle">
+            <i class="am-menu-toggle-icon am-icon-list"></i>
+      </a>
+        <ul class="am-menu-nav am-avg-sm-1 am-collapse">
+            <li class="">
+              <a href="drive_in.html" class="" >自驾/打车进入小区地面</a>
+            </li>
+            <li class="">
+              <a href="drive_out.html" class="" >从小区地面自驾/打车出小区</a>
+            </li>
+            <li class="">
+              <a href="walk.html" class="" >步行出小区去地铁/公交站/华腾世纪</a>
+            </li>
+        </ul>
+    </nav>
+    
+    <div id="container" style="position:absolute"></div>
+        <div class="line-select-div" id="buttons_div">
+        </div>
+
+
+
+        <script>
+
+        </script>
+    <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.4.0&key=33079884b58711de84acdb5dcb80e004'></script>
+    <!-- UI组件库 1.0 -->
+    <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <script src="js/path.js"></script>
+    <script type="text/javascript">
+    var data = [{
+        name: '自驾/打车出小区进入建国路(西向)',
+        path: [
+            [116.510583,39.908602],
+            [116.510562,39.907223],
+            [116.510707,39.907096],
+            [116.510755,39.908273],
+            [116.507939,39.9084],
+            [116.507698,39.908384],
+            [116.507242,39.908236],
+            [116.507177,39.908149],
+            [116.506142,39.908166]
+        ]},{
+        name: '自驾/打车出小区进入建国路(东向)',
+        path:[
+            [116.510583,39.908602],
+            [116.510562,39.907223],
+            [116.510707,39.907096],
+            [116.510578,39.906985],
+            [116.510481,39.906931],
+            [116.510374,39.906915],
+            [116.508833,39.906928],
+            [116.508141,39.90699],
+            [116.507851,39.907192],
+            [116.507813,39.907435],
+            [116.507883,39.907546],
+            [116.508076,39.907702],
+            [116.510093,39.907669]
+            ]
+        },{
+        name: '自驾/打车出小区进入惠河南街',
+        path:[
+                [116.510588,39.908598],
+                [116.510572,39.907207],
+                [116.510722,39.907092],
+                [116.510631,39.907013],
+                [116.510465,39.906935],
+                [116.510282,39.906915],
+                [116.508823,39.906939],
+                [116.508474,39.906939],
+                [116.508099,39.906939],
+                [116.507911,39.90696],
+                [116.507815,39.907001],
+                [116.507804,39.907009],
+                [116.507799,39.907013],
+                [116.507659,39.907005],
+                [116.507589,39.906947],
+                [116.507546,39.906873],
+                [116.507546,39.906787],
+                [116.507605,39.906672],
+                [116.507745,39.906664],
+                [116.509376,39.90668],
+            ]
+        }
+    ];
+    
+    initPathLine(data, init_navgs, 'img/car.png', true);
+
+
+    </script>
+</body>
+
+</html>

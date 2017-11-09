@@ -1,0 +1,57 @@
+<!-- 重点参数：renderOptions -->
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <!-- 原始地址：//webapi.amap.com/ui/1.0/ui/misc/PathSimplifier/examples/index.html -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>连续坐标拾取</title>
+    <style>
+    html,
+    body,
+    #container {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+    }
+    
+    </style>
+    <link rel="apple-touch-icon-precomposed" href="http://s.amazeui.org/assets/2.x/i/app-icon72x72@2x.png">
+    <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="http://s.amazeui.org/assets/2.x/css/amazeui.min.css?v=ivnep6b6">
+    <link rel="stylesheet" href="http://s.amazeui.org/assets/2.x/css/amaze.min.css?v=ivnep6b6">
+    <link rel="canonical" href="http://amazeui.org/widgets/menu/dropdown1/0?_ver=2.x"/>
+    <link rel="stylesheet" href="css/life.css"/>
+    <script src="http://s.amazeui.org/assets/2.x/js/jquery.min.js?v=ivnep6b6">
+    </script>
+    <script src="http://s.amazeui.org/assets/2.x/js/handlebars.min.js?v=ivnep6b6"></script>
+    <script src="http://s.amazeui.org/assets/2.x/js/amazeui.min.js?v=ivnep6b6"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="container" style="position:absolute"></div>
+
+<!--     <span class="am-badge am-badge-primary am-text-xl" style="position:absolute"><span class="am-icon-commenting"></span>按右键停止选取，点击“清除”从新绘制</span> -->
+    <div class="am-alert am-alert-success tips" style="position:absolute">
+        <ul class="margin-bottom-none padding-left-lg">
+            <li>按右键停止选取</li>
+            <li>点击“清除”重新绘制</li>
+        </ul>
+    </div>
+
+    <button id="clear_button" type="button" class="am-btn am-btn-primary claerbutton" style="position:absolute">清除</button>
+    <div class="points_div" id="points_div">
+        <div class="ponts_div_inner nodisplay" id="ponts_div_inner">
+        </div>
+    </div>
+    <script type="text/javascript" src='http://webapi.amap.com/maps?v=1.4.0&key=33079884b58711de84acdb5dcb80e004'></script>
+    <!-- UI组件库 1.0 -->
+    <script src="http://webapi.amap.com/ui/1.0/main.js?v=1.0.11"></script>
+    <script src="js/getPoints.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>
